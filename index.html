@@ -62,21 +62,13 @@
                 <option value="Industrie">Industrie / Produktion</option>
             </select>
 
-            <!--Sortierung nach CO2 Tonnen Emissionen auf und absteigend-->
-            <label for="emissionSort">Emissionszahlen sortieren</label>
-            <select name="emissionSort" id="emissionSort" onchange="sortEmissions()">
-                <option value="">Keine Sortierung</option>
-                <option value="aufsteigend">Aufsteigend</option>
-                <option value="absteigend">Absteigend</option>
-            </select>
-
             <table id="emissionTable">
                 <thead>
                     <tr>
-                        <th>Land</th>
-                        <th>Unternehmen</th>
-                        <th>CO₂-Emissionen (Tonnen)</th>
-                        <th>Branche</th>
+                        <th onclick="sortByCountry(0)">Land</th>
+                        <th onclick="sortByCountry(1)">Unternehmen</th>
+                        <th onclick="sortByCountry(2)">CO₂-Emissionen (Tonnen)</th>
+                        <th onclick="sortByCountry(3)">Branche</th>
                     </tr>
                 </thead>
                 <tbody>

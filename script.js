@@ -59,3 +59,21 @@ function industryFilter(td) {
     }
 }
 
+function sortByCountry(index) {
+    let table = document.getElementById("emissionTable");
+    let tbody = table.getElementsByTagName("tbody")[0];
+    let rows = Array.from(table.getElementsByTagName("tr")).slice(1);
+
+    rows.sort((rowA, rowB) => {
+        let cellA = rowA.getElementsByTagName("td")[index];
+        let cellB = rowB.getElementsByTagName("td")[index];
+        
+        let valueA = parseFloat(cellA) || cellA;
+        let valueB = parseFloat(cellB) || cellB;
+        
+        return (valueA > valueB ? 1 : -1);
+    });
+
+    tbody.innerHTML = "";
+    rows.forEach(row => tbody.appendChild(row));
+}
