@@ -33,10 +33,44 @@
         <section id="table">
             <h3>CO₂-Emissionsdaten weltweit</h3>
             <h6>Fiktive CO₂-Emissionsdaten nach Land und Unternehmen</h6>
-            <!--JavaScript TODO Suchfunktion der Tablle einbauen-->
-            <!--JavaScript TODO Filterfunktion nach Ländern der Tablle einbauen-->
-            <!--JavaScript TODO Filterfunktion nach Unternehmen der Tablle einbauen-->
-            <table>
+            <!--Suchfeld-->
+            <input type="text" id="searchInput" placeholder="Suchbegriff eingeben" onkeyup="searchFunction()">
+
+            <!--TODO Filter ignorieren sich gegenseitig-->
+            <!--Filter für Länder-->
+            <label for="countryFilter">Land</label>
+            <select name="countryFilter" id="countryFilter" onchange="countryFilter()">
+                <option value="">Alle</option>
+                <option value="Deutschland">Deutschland</option>
+                <option value="USA">USA</option>
+                <option value="China">China</option>
+                <option value="Frankreich">Frankreich</option>
+                <option value="Indien">Indien</option>
+                <option value="Brasilien">Brasilien</option>
+                <option value="Australien">Australien</option>
+            </select>
+
+            <!--Filter für Branchen-->
+            <label for="industryFilter">Branche</label>
+            <select name="industryFilter" id="industryFilter" onchange="industryFilter()">
+                <option value="">Alle</option>
+                <option value="Energie">Energie</option>
+                <option value="Bergbau">Bergbau / Rohstoffe</option>
+                <option value="Technologie">Technologie / Innovation</option>
+                <option value="Automobil">Automobil</option>
+                <option value="Umwelt">Umwelt / Nachhaltigkeit</option>
+                <option value="Industrie">Industrie / Produktion</option>
+            </select>
+
+            <!--Sortierung nach CO2 Tonnen Emissionen auf und absteigend-->
+            <label for="emissionSort">Emissionszahlen sortieren</label>
+            <select name="emissionSort" id="emissionSort" onchange="sortEmissions()">
+                <option value="">Keine Sortierung</option>
+                <option value="aufsteigend">Aufsteigend</option>
+                <option value="absteigend">Absteigend</option>
+            </select>
+
+            <table id="emissionTable">
                 <thead>
                     <tr>
                         <th>Land</th>
@@ -45,108 +79,110 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr data-industry="Energie">
                         <td>Deutschland</td>
                         <td>Energo GmbH</td>
                         <td>5.200</td>
                     </tr>
-                    <tr>
+                    <tr data-industry="Technologie">
                         <td>Deutschland</td>
                         <td>GreenTech AG</td>
                         <td>3.800</td>
                     </tr>
-                    <tr>
+                    <tr data-industry="Industrie">
                         <td>Deutschland</td>
                         <td>Stahlwerke Müller</td>
                         <td>7.500</td>
                     </tr>
-                    <tr>
+                    <tr data-industry="Energie">
                         <td>USA</td>
                         <td>CarbonCorp Inc.</td>
                         <td>15.200</td>
                     </tr>
-                    <tr>
+                    <tr data-industry="Bergbau">
                         <td>USA</td>
                         <td>TexOil Ltd.</td>
                         <td>18.300</td>
                     </tr>
-                    <tr>
+                    <tr data-industry="Energie">
                         <td>USA</td>
                         <td>FuturePower LLC</td>
                         <td>12.100</td>
                     </tr>
-                    <tr>
+                    <tr data-industry="Industrie">
                         <td>China</td>
                         <td>SinoSteel Group</td>
                         <td>25.400</td>
                     </tr>
-                    <tr>
+                    <tr data-industry="Energie">
                         <td>China</td>
                         <td>MegaEnergy Co.</td>
                         <td>30.200</td>
                     </tr>
-                    <tr>
+                    <tr data-industry="Bergbau">
                         <td>China</td>
                         <td>GreenCoal Ltd.</td>
                         <td>22.500</td>
                     </tr>
-                    <tr>
-                        <td>Frakreich</td>
+                    <tr data-industry="Energie">
+                        <td>Frankreich</td>
                         <td>EnergiePlus SA</td>
                         <td>6.400</td>
                     </tr>
-                    <tr>
+                    <tr data-industry="Automobil">
                         <td>Frankreich</td>
                         <td>AutoManufacture FR</td>
                         <td>8.100</td>
                     </tr>
-                    <tr>
+                    <tr data-industry="Industrie">
                         <td>Frankreich</td>
                         <td>BlueSteel SAS</td>
                         <td>5.900</td>
                     </tr>
-                    <tr>
+                    <tr data-industry="Energie">
                         <td>Indien</td>
                         <td>BharatPower Ltd.</td>
                         <td>20.500</td>
                     </tr>
-                    <tr>
+                    <tr data-industry="Technologie">
                         <td>Indien</td>
                         <td>Mumbai Industries</td>
                         <td>14.800</td>
                     </tr>
-                    <tr>
+                    <tr data-industry="Umwelt">
                         <td>Indien</td>
                         <td>EcoFuel Pvt.</td>
                         <td>17.300</td>
                     </tr>
-                    <tr>
+                    <tr data-industry="Energie">
                         <td>Brasilien</td>
                         <td>Amazon Energy</td>
                         <td>9.700</td>
                     </tr>
-                    <tr>
+                    <tr data-industry="Industrie">
                         <td>Brasilien</td>
                         <td>SãoPaulo Steel</td>
                         <td>11.200</td>
                     </tr>
-                    <tr>
+                    <tr data-industry="Umwelt">
                         <td>Brasilien</td>
                         <td>Green Rio S.A.</td>
                         <td>11.200</td>
                     </tr>
-                    <tr>
+                    <tr data-industry="Bergbau">
                         <td>Australien</td>
                         <td>Pacific Mining Ltd.</td>
                         <td>13.400</td>
                     </tr>
-                    <tr>
+                    <tr data-industry="Energie">
                         <td>Australien</td>
                         <td>Eco Coal Pty.</td>
                         <td>10.200</td>
                     </tr>
                 </tbody>
             </table>
+
+            <script src="script.js"></script>
         </section>
 
         <section id="about">
@@ -180,9 +216,11 @@
         <img src="./images/logo_weiss.png" alt="logo">
         <p>E-Mail: co2-monitor@gmail.com</p>
         <p>Telefon: +49 123 4567890</p>
-        <img src="./images/instagram.png" alt="Instagram Link"> <!--TODO Link zu 404 einfügen-->
-        <img src="./images/tik-tok.png" alt="TikTok Link"> <!--TODO Link zu 404 einfügen-->
-        <img src="./images/x.png" alt="X Link"> <!--TODO Link zu 404 einfügen-->
+
+        <a href="404page.html"><img src="./images/instagram.png" alt="Instagram Link"></a>
+        <a href="404page.html"><img src="./images/tik-tok.png" alt="TikTok Link"></a>
+        <a href="404page.html"><img src="./images/x.png" alt="X Link"></a>
+
         <a href="datenschutzrichtlinien.html">Datenschutzrichtlinien</a>
         <a href="impressum.html">Impressum</a>
         <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a>
