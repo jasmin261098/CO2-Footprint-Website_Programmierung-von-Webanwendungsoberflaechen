@@ -39,7 +39,7 @@
             <!--TODO Filter ignorieren sich gegenseitig-->
             <!--Filter für Länder-->
             <label for="countryFilter">Land</label>
-            <select name="countryFilter" id="countryFilter" onchange="countryFilter()">
+            <select name="countryFilter" id="countryFilter" onchange="filterAll()">
                 <option value="">Alle</option>
                 <option value="Deutschland">Deutschland</option>
                 <option value="USA">USA</option>
@@ -52,7 +52,7 @@
 
             <!--Filter für Branchen-->
             <label for="industryFilter">Branche</label>
-            <select name="industryFilter" id="industryFilter" onchange="industryFilter()">
+            <select name="industryFilter" id="industryFilter" onchange="filterAll()">
                 <option value="">Alle</option>
                 <option value="Energie">Energie</option>
                 <option value="Bergbau">Bergbau / Rohstoffe</option>
@@ -76,108 +76,129 @@
                         <th>Land</th>
                         <th>Unternehmen</th>
                         <th>CO₂-Emissionen (Tonnen)</th>
+                        <th>Branche</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr data-industry="Energie">
+                    <tr>
                         <td>Deutschland</td>
                         <td>Energo GmbH</td>
                         <td>5.200</td>
+                        <td>Energie</td>
                     </tr>
-                    <tr data-industry="Technologie">
+                    <tr>
                         <td>Deutschland</td>
                         <td>GreenTech AG</td>
                         <td>3.800</td>
+                        <td>Technologie</td>
                     </tr>
-                    <tr data-industry="Industrie">
+                    <tr>
                         <td>Deutschland</td>
                         <td>Stahlwerke Müller</td>
                         <td>7.500</td>
+                        <td>Industrie</td>
                     </tr>
-                    <tr data-industry="Energie">
+                    <tr>
                         <td>USA</td>
                         <td>CarbonCorp Inc.</td>
                         <td>15.200</td>
+                        <td>Energie</td>
                     </tr>
-                    <tr data-industry="Bergbau">
+                    <tr>
                         <td>USA</td>
                         <td>TexOil Ltd.</td>
                         <td>18.300</td>
+                        <td>Bergbau</td>
                     </tr>
-                    <tr data-industry="Energie">
+                    <tr>
                         <td>USA</td>
                         <td>FuturePower LLC</td>
                         <td>12.100</td>
+                        <td>Energie</td>
                     </tr>
-                    <tr data-industry="Industrie">
+                    <tr>
                         <td>China</td>
                         <td>SinoSteel Group</td>
                         <td>25.400</td>
+                        <td>Industrie</td>
                     </tr>
-                    <tr data-industry="Energie">
+                    <tr>
                         <td>China</td>
                         <td>MegaEnergy Co.</td>
                         <td>30.200</td>
+                        <td>Energie</td>
                     </tr>
-                    <tr data-industry="Bergbau">
+                    <tr>
                         <td>China</td>
                         <td>GreenCoal Ltd.</td>
                         <td>22.500</td>
+                        <td>Bergbau</td>
                     </tr>
-                    <tr data-industry="Energie">
+                    <tr>
                         <td>Frankreich</td>
                         <td>EnergiePlus SA</td>
                         <td>6.400</td>
+                        <td>Energie</td>
                     </tr>
-                    <tr data-industry="Automobil">
+                    <tr>
                         <td>Frankreich</td>
                         <td>AutoManufacture FR</td>
                         <td>8.100</td>
+                        <td>Automobil</td>
                     </tr>
-                    <tr data-industry="Industrie">
+                    <tr>
                         <td>Frankreich</td>
                         <td>BlueSteel SAS</td>
                         <td>5.900</td>
+                        <td>Industrie</td>
                     </tr>
-                    <tr data-industry="Energie">
+                    <tr>
                         <td>Indien</td>
                         <td>BharatPower Ltd.</td>
                         <td>20.500</td>
+                        <td>Energie</td>
                     </tr>
-                    <tr data-industry="Technologie">
+                    <tr>
                         <td>Indien</td>
                         <td>Mumbai Industries</td>
                         <td>14.800</td>
+                        <td>Technologie</td>
                     </tr>
-                    <tr data-industry="Umwelt">
+                    <tr>
                         <td>Indien</td>
                         <td>EcoFuel Pvt.</td>
                         <td>17.300</td>
+                        <td>Umwelt</td>
                     </tr>
-                    <tr data-industry="Energie">
+                    <tr>
                         <td>Brasilien</td>
                         <td>Amazon Energy</td>
                         <td>9.700</td>
+                        <td>Energie</td>
                     </tr>
-                    <tr data-industry="Industrie">
+                    <tr>
                         <td>Brasilien</td>
                         <td>SãoPaulo Steel</td>
                         <td>11.200</td>
+                        <td>Industrie</td>
                     </tr>
-                    <tr data-industry="Umwelt">
+                    <tr>
                         <td>Brasilien</td>
                         <td>Green Rio S.A.</td>
                         <td>11.200</td>
+                        <td>Umwelt</td>
                     </tr>
-                    <tr data-industry="Bergbau">
+                    <tr>
                         <td>Australien</td>
                         <td>Pacific Mining Ltd.</td>
                         <td>13.400</td>
+                        <td>Bergbau</td>
                     </tr>
-                    <tr data-industry="Energie">
+                    <tr>
                         <td>Australien</td>
                         <td>Eco Coal Pty.</td>
                         <td>10.200</td>
+                        <td>Energie</td>
                     </tr>
                 </tbody>
             </table>
