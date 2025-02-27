@@ -1,20 +1,24 @@
 function searchFunction() {
-    var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("searchInput");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("emissionTable");
-    tr = table.getElementsByTagName("tr");
+    let input = document.getElementById("searchInput");
+    let filter = input.value.toUpperCase();
+    let table = document.getElementById("emissionTable");
+    let tr = table.getElementsByTagName("tr");
 
     for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td") [0]; //TODO Suche auf alle Spalten erweitern
-        if (td) {
-            txtValue = td.textContent || td.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
+        let td = tr[i].getElementsByTagName("td");
+        let rowMatch = false;
+        
+        for (j = 0; j < td.length; j++) {
+            if (td[j]) {
+                let txtValue = td[j].textContent || td[j].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    rowMatch = true;
+                    break;
+                }
             }
         }
+        
+        tr[i].style.display = rowMatch ? "" : "none";
     }
 }
 
@@ -59,7 +63,7 @@ function industryFilter(td) {
     }
 }
 
-function sortByCountry(index) {
+function sort(index) {
     let table = document.getElementById("emissionTable");
     let tbody = table.getElementsByTagName("tbody")[0];
     let rows = Array.from(table.getElementsByTagName("tr")).slice(1);
