@@ -16,9 +16,9 @@ h3 {
 }
 
 p {
-    font-size: 1.1em; /* Schriftgröße für den Text */
-    line-height: 1.6; /* Zeilenhöhe für bessere Lesbarkeit */
-    max-width: 800px; /* Maximale Breite für den Text */
+    font-size: 1.1em;
+    line-height: 1.6; 
+    max-width: 800px; 
 }
 
 .gridContainer {
@@ -118,10 +118,10 @@ p {
   
   #intro {
     grid-area: intro;
-    background-color: black; /* Hintergrundfarbe Schwarz */
-    color: white; /* Textfarbe Weiß */
-    padding: 80px 10%; /* Vertikales und horizontales Padding */
-    text-align: left; /* Text linksbündig */
+    background-color: black; 
+    color: white; 
+    padding: 80px 10%; 
+    text-align: left; 
   }
   
   /* Optional: Anpassungen für kleinere Bildschirme */
@@ -142,6 +142,7 @@ p {
   #table {
     grid-area: table;
     background-color: white;
+    border-radius: 30px;
     padding: 40px 10%;
     text-align: left;
   }
@@ -150,7 +151,14 @@ p {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin-bottom: 20px;
+  }
+
+  .table-filters > * { /* Targets all direct children */
+    margin-right: 10px; /* Add 10px space to the right of each element */
+  }
+  
+  .table-filters > *:last-child { /* Removes margin from the last element */
+    margin-right: 0;
   }
   
   .search-input {
@@ -263,6 +271,7 @@ p {
   #contact {
     grid-area: contact;
     background-color: white;
+    border-radius: 30px;
     padding: 80px 10%;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -338,7 +347,8 @@ p {
   
   footer {
     grid-area: footer;
-    background-color: #f0f0f0; /* Light gray background */
+    background-color: white;
+    border-radius: 30px;
     padding: 40px 10%;
     text-align: center;
   }
@@ -352,6 +362,7 @@ p {
   
   .footer-logo {
     max-height: 50px;
+    margin-bottom: 15px;
   }
   
   .footer-contact {
@@ -384,6 +395,10 @@ p {
   
   footer a:hover {
     text-decoration: underline;
+  }
+
+  footer p {
+    line-height: 0.5; 
   }
   
   /* Optional: Adjust for smaller screens */
