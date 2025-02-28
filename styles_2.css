@@ -1,3 +1,26 @@
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+h1 {
+    font-size: 8em;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+}
+
+h3 {
+    font-size: 2em; 
+    font-weight: 500; 
+    margin-bottom: 20px; 
+}
+
+p {
+    font-size: 1.1em; /* Schriftgröße für den Text */
+    line-height: 1.6; /* Zeilenhöhe für bessere Lesbarkeit */
+    max-width: 800px; /* Maximale Breite für den Text */
+}
+
 .gridContainer {
     display: grid;
     grid-template-columns: 5% 1fr 1fr 1fr 5%; 
@@ -69,48 +92,28 @@
     grid-area: home;
     display: grid;
     align-items: center;
-    justify-content: center; /* Center content horizontally */
-    background-image: url('./images/michael-milverton-Le4yqbCMoJo-unsplash.jpg'); /* Replace with your image path */
+    justify-content: left;
+    background-image: url('./images/michael-milverton-Le4yqbCMoJo-unsplash.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh; /* Make the section fill the viewport height */
-    color: white; /* Set text color to white for better visibility */
-    text-align: left;
-    padding: 20px;
+    height: 100vh; 
+    color: black; 
+    padding: 100px;
+    border-radius: 30px;
+  }
+
+  #home h3 {
+    margin-top: 2vw;
+    margin-bottom: 2vw;
   }
   
   #home .home-content {
-    max-width: 80%; /* Adjust as needed */
-  }
-  
-  #home .text-content h1 {
-    font-size: 3em;
-    margin: 0;
-    line-height: 1;
-  }
-  
-  #home .text-content h3 {
-    font-size: 1.2em;
-    margin-top: 10px;
+    max-width: 80%; 
   }
   
   #home .button-wrapper {
     margin-top: 20px;
-  }
-  
-  #home .scroll-down-button {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  /* Optional: Add hover effect to the button */
-  #home .scroll-down-button:hover {
-    background-color: rgba(0, 0, 0, 0.7);
   }
   
   #intro {
@@ -119,18 +122,6 @@
     color: white; /* Textfarbe Weiß */
     padding: 80px 10%; /* Vertikales und horizontales Padding */
     text-align: left; /* Text linksbündig */
-  }
-  
-  #intro h3 {
-    font-size: 2.5em; /* Schriftgröße für die Überschrift */
-    font-weight: 600; /* Schriftstärke */
-    margin-bottom: 20px; /* Abstand nach unten */
-  }
-  
-  #intro p {
-    font-size: 1.1em; /* Schriftgröße für den Text */
-    line-height: 1.6; /* Zeilenhöhe für bessere Lesbarkeit */
-    max-width: 800px; /* Maximale Breite für den Text */
   }
   
   /* Optional: Anpassungen für kleinere Bildschirme */
@@ -154,17 +145,7 @@
     padding: 40px 10%;
     text-align: left;
   }
-  
-  #table h3 {
-    font-size: 2em;
-    margin-bottom: 10px;
-  }
-  
-  #table p {
-    font-size: 1.1em;
-    margin-bottom: 20px;
-  }
-  
+
   .table-filters {
     display: flex;
     flex-wrap: wrap;
@@ -240,12 +221,6 @@
     text-align: left;
   }
   
-  #about h3 {
-    font-size: 2.5em;
-    font-weight: 600;
-    margin-bottom: 40px;
-  }
-  
   #about .container {
     display: flex;
     align-items: center;
@@ -262,20 +237,10 @@
     border-radius: 10px;
   }
   
-  #about #about-detail p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    max-width: 60%;
-  }
-  
   /* Optional: Anpassungen für kleinere Bildschirme */
   @media (max-width: 768px) {
     #about {
       padding: 60px 5%;
-    }
-  
-    #about h3 {
-      font-size: 2em;
     }
   
     #about .container {
@@ -293,10 +258,6 @@
       margin-right: 0;
       margin-bottom: 20px;
     }
-  
-    #about #about-detail p {
-      max-width: 100%;
-    }
   }
   
   #contact {
@@ -310,8 +271,6 @@
   }
   
   #contact h3 {
-    font-size: 2.5em;
-    font-weight: 600;
     margin-bottom: 40px;
     grid-column: 1 / 3;
   }
