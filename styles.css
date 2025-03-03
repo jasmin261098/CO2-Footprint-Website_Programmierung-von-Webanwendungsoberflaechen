@@ -20,21 +20,21 @@ p {
 }
 
 .gridContainer {
-    display: grid;
-    grid-template-columns: 5% 1fr 1fr 1fr 5%; 
-    grid-template-rows: auto auto auto auto auto auto auto;
-    grid-template-areas:
-      "header header header header header"
-      "home home home home home"
-      "intro intro intro intro intro"
-      "table table table table table"
-      "about about about about about"
-      "contact contact contact contact contact"
-      "footer footer footer footer footer";
-    gap: 10px;
-    max-width: 1400px; 
-    margin: 0 auto; 
-  }
+  display: grid;
+  grid-template-columns: 5% 1fr 1fr 1fr 5%; 
+  grid-template-rows: auto auto auto auto auto auto auto;
+  grid-template-areas:
+    "header header header header header"
+    "home home home home home"
+    "intro intro intro intro intro"
+    "table table table table table"
+    "about about about about about"
+    "contact contact contact contact contact"
+    "footer footer footer footer footer";
+  gap: 10px;
+  max-width: 1400px; 
+  margin: 0 auto; 
+}
   
   #header {
     grid-area: header;
@@ -63,17 +63,6 @@ p {
     border-radius: 25px;
   }
   
-  @media (max-width: 768px) {
-    #header .navbar-nav {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    #header .header-nav-item {
-      margin: 10px 0;
-    }
-  }
-  
   #home {
     grid-area: home;
     background-image: url('./images/michael-milverton-Le4yqbCMoJo-unsplash.jpg'); 
@@ -99,20 +88,6 @@ p {
     color: white; 
     padding: 80px 10%; 
     text-align: left; 
-  }
-  
-  @media (max-width: 768px) {
-    #intro {
-      padding: 60px 5%;
-    }
-  
-    #intro h3 {
-      font-size: 2em;
-    }
-  
-    #intro p {
-      font-size: 1em;
-    }
   }
   
   #table {
@@ -156,18 +131,7 @@ p {
     border: 1px solid #ddd;
     border-radius: 5px;
   }
-  
-  @media (max-width: 768px) {
-    .table-filters {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .filter-group {
-      margin: 10px 0;
-    }
-  }
-  
+   
   #about {
     grid-area: about;
     color: white;
@@ -184,28 +148,6 @@ p {
     max-width: 40%;
     margin-right: 40px;
     border-radius: 10px;
-  }
-  
-  @media (max-width: 768px) {
-    #about {
-      padding: 60px 5%;
-    }
-  
-    #about .container {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    #about #about-detail {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    #about #about-detail img {
-      max-width: 100%;
-      margin-right: 0;
-      margin-bottom: 20px;
-    }
   }
   
   #contact {
@@ -236,22 +178,6 @@ p {
     align-self: stretch;
 }
   
-  @media (max-width: 768px) {
-    #contact {
-      grid-template-columns: 1fr;
-      padding: 60px 5%;
-    }
-  
-    #contact h3 {
-      grid-column: 1 / 2;
-    }
-  
-    .contact-image {
-      order: -1;
-      margin-bottom: 20px;
-    }
-  }
-
   footer {
     grid-area: footer;
     background-color: white;
@@ -308,19 +234,6 @@ p {
     line-height: 0.5; 
   }
   
-  @media (max-width: 768px) {
-    .footer-content {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .footer-contact,
-    .social-links,
-    .footer-links {
-      margin-top: 20px;
-    }
-  }
-
   body.rtl {
     direction: rtl;
 }
