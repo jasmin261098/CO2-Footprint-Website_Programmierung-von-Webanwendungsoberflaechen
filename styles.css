@@ -5,7 +5,6 @@ body {
 h1 {
     font-size: 8em;
     font-weight: 700;
-    margin: 0;
     line-height: 1;
 }
 
@@ -18,7 +17,6 @@ h3 {
 p {
     font-size: 1.1em;
     line-height: 1.6; 
-    max-width: 800px; 
 }
 
 .gridContainer {
@@ -43,11 +41,11 @@ p {
   }
   
   #header .navbar {
-    padding: 30px 0; /* Adjust padding as needed */
+    padding: 30px 0;
   }
   
   #header .navbar-brand img {
-    max-height: 40px; 
+    max-height: 45px; 
   }
   
   #header .navbar-nav {
@@ -55,7 +53,7 @@ p {
   }
   
   #header .header-nav-item {
-    margin-left: 20px; /* Add spacing between nav items */
+    margin-left: 20px; 
   }
   
   #header .header-nav-item:last-child a {
@@ -65,18 +63,6 @@ p {
     border-radius: 25px;
   }
   
-  #header .header-nav-item a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 5px 10px;
-  }
-  
-  #header .header-nav-item a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Optional: Adjust for smaller screens */
   @media (max-width: 768px) {
     #header .navbar-nav {
       flex-direction: column;
@@ -90,16 +76,12 @@ p {
   
   #home {
     grid-area: home;
-    display: grid;
-    align-items: center;
-    justify-content: left;
     background-image: url('./images/michael-milverton-Le4yqbCMoJo-unsplash.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh; 
     color: black; 
-    padding: 100px;
+    padding: 80px 10%; 
     border-radius: 30px;
   }
 
@@ -108,17 +90,12 @@ p {
     margin-bottom: 2vw;
   }
   
-  #home .home-content {
-    max-width: 80%; 
-  }
-  
   #home .button-wrapper {
     margin-top: 20px;
   }
   
   #intro {
     grid-area: intro;
-    background-color: black; 
     color: white; 
     padding: 80px 10%; 
     text-align: left; 
@@ -153,12 +130,8 @@ p {
     align-items: center;
   }
 
-  .table-filters > * { /* Targets all direct children */
-    margin-right: 10px; /* Add 10px space to the right of each element */
-  }
-  
-  .table-filters > *:last-child { /* Removes margin from the last element */
-    margin-right: 0;
+  .table-filters > * { 
+    margin-right: 10px; 
   }
   
   .search-input {
@@ -185,30 +158,6 @@ p {
     border-radius: 5px;
   }
   
-  .emission-table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-  .emission-table th,
-  .emission-table td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .emission-table th {
-    background-color: #f0f0f0;
-    font-weight: 600;
-  }
-  
-  .emission-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
   /* Optional: Adjust for smaller screens */
   @media (max-width: 768px) {
     .table-filters {
@@ -223,15 +172,9 @@ p {
   
   #about {
     grid-area: about;
-    background-color: black;
     color: white;
     padding: 80px 10%;
     text-align: left;
-  }
-  
-  #about .container {
-    display: flex;
-    align-items: center;
   }
   
   #about #about-detail {
@@ -284,49 +227,17 @@ p {
     grid-column: 1 / 3;
   }
   
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
   .form-group {
     margin-bottom: 20px;
   }
   
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 600;
-  }
-  
-  .form-group input,
-  .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  
-  .form-group textarea {
-    resize: vertical;
-    min-height: 150px;
-  }
-  
-  .submit-button {
-    background-color: black;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    align-self: flex-start;
-  }
-  
   .contact-image {
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 10px;
-  }
+    align-self: stretch;
+}
   
   /* Optional: Anpassungen für kleinere Bildschirme */
   @media (max-width: 768px) {
@@ -345,14 +256,6 @@ p {
     }
   }
 
-  .contact-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    align-self: stretch;
-}
-  
   footer {
     grid-area: footer;
     background-color: white;
