@@ -101,7 +101,6 @@ p {
     text-align: left; 
   }
   
-  /* Optional: Anpassungen für kleinere Bildschirme */
   @media (max-width: 768px) {
     #intro {
       padding: 60px 5%;
@@ -158,7 +157,6 @@ p {
     border-radius: 5px;
   }
   
-  /* Optional: Adjust for smaller screens */
   @media (max-width: 768px) {
     .table-filters {
       flex-direction: column;
@@ -188,7 +186,6 @@ p {
     border-radius: 10px;
   }
   
-  /* Optional: Anpassungen für kleinere Bildschirme */
   @media (max-width: 768px) {
     #about {
       padding: 60px 5%;
@@ -239,7 +236,6 @@ p {
     align-self: stretch;
 }
   
-  /* Optional: Anpassungen für kleinere Bildschirme */
   @media (max-width: 768px) {
     #contact {
       grid-template-columns: 1fr;
@@ -312,7 +308,6 @@ p {
     line-height: 0.5; 
   }
   
-  /* Optional: Adjust for smaller screens */
   @media (max-width: 768px) {
     .footer-content {
       flex-direction: column;
@@ -325,4 +320,22 @@ p {
       margin-top: 20px;
     }
   }
+
+  body.rtl {
+    direction: rtl;
+}
+
+body.rtl, 
+body.rtl p, 
+body.rtl h1, 
+body.rtl h2, 
+body.rtl h3, 
+body.rtl h4, 
+body.rtl h5, 
+body.rtl h6, 
+body.rtl li, 
+body.rtl span {
+    text-align: right;
+}
+
 

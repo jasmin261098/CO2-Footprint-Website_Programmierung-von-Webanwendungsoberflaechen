@@ -81,3 +81,20 @@ function sort(index) {
     tbody.innerHTML = "";
     rows.forEach(row => tbody.appendChild(row));
 }
+
+function detectLanguage() {
+    const rtlLanguages = ["ar", "he", "fa", "ur"];
+    const userLang = navigator.language || navigator.userLanguage;
+    const langCode = userLang.split("-")[0];
+
+    document.documentElement.lang = langCode;
+
+    if (rtlLanguages.includes(langCode)) {
+        document.body.classList.add("rtl");
+    } else {
+        document.body.classList.remove("rtl");
+    }
+}
+
+detectLanguage();
+
