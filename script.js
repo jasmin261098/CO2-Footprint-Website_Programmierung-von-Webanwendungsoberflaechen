@@ -98,3 +98,36 @@ function detectLanguage() {
 
 detectLanguage();
 
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector(".contact-form");
+    const answer = form.querySelector("#form-answer");
+    
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        
+        const formData = new FormData(form);
+        let xssDetected = false;
+        
+        function sanitizeInput(input) {
+            if (input.includes("<") || input.includes(">")) {
+                xssDetected = true; 
+            }
+            return input.replace(/</g, "U+003C").replace(/>/g, "U+003E");
+        }
+
+        let vorname = sanitizeInput(formData.get("vorname"));
+        let name = sanitizeInput(formData.get("name"));
+        let email = sanitizeInput(formData.get("email"));
+        let nachricht = sanitizeInput(formData.get("nachricht"));
+        
+        console.log("Formulardaten:", { vorname, name, email, nachricht });
+        
+        if (xssDetected) {
+            answer.textContent = "Netter Versuch, aber wir sind abgesichert!";
+        } else {
+            answer.textContent = "Danke für Deine Nachricht.";
+        }
+        
+        form.reset();
+    });
+});
